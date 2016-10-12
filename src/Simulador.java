@@ -70,13 +70,14 @@ public class Simulador {
 
 		System.out.println("********************************************************************");
 		
-		Condicion c1 = new CondicionDuracion(300);
-		Condicion c2 = new CondicionNombre("vertigo");
-		Condicion c3 = new CondicionArtista("u2");
+		Condicion c1 = new CondicionDuracion(400);
+		Condicion c2 = new CondicionNombre("verti");
+		Condicion c3 = new CondicionArtista("lmfo");
 		Condicion c4 = new CondicionAnd(c1,c3);
-		Condicion c5 = new CondicionGenero("rock alternativo");
+		Condicion c5 = new CondicionGenero("rock");
+		Condicion c6 = new CondicionNot(c3);
 		
-		Vector<ElementoAudio> v1 = r.buscar(c5);
+		Vector<ElementoAudio> v1 = r.buscar(c6);
 		
 		for (int i = 0; i < v1.size(); i++) {
 			System.out.println(v1.elementAt(i).toString());

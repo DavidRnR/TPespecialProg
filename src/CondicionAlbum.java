@@ -8,7 +8,7 @@ public class CondicionAlbum extends Condicion{
 
 	@Override
 	public boolean cumple(ElementoAudio elemento) {
-		return ((PistaAudio)elemento).getAlbum().equalsIgnoreCase(valor);
+		return ((PistaAudio)elemento).getAlbum().toLowerCase().contains(valor.toLowerCase());
 	}
 
 }

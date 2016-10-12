@@ -8,7 +8,7 @@ public class CondicionNombre extends Condicion{
 
 	@Override
 	public boolean cumple(ElementoAudio elemento) {
-		return elemento.getTitulo().equalsIgnoreCase(valor);
-	}
+		return elemento.getTitulo().toLowerCase().contains(valor.toLowerCase());	
+		}
 
 }

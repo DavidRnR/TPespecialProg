@@ -78,8 +78,8 @@ public class PistaAudio extends ElementoAudio {
 		return 1;
 	}
 
-	public Vector buscar (Condicion cond) {
-		Vector resultado = new Vector();
+	public Vector<ElementoAudio> buscar (Condicion cond) {
+		Vector<ElementoAudio> resultado = new Vector<ElementoAudio>();
 
 		if(cond.cumple(this)) 
 			resultado.add(this);
