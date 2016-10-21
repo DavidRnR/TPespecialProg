@@ -17,20 +17,20 @@ public class Simulador {
 		ElementoAudio yoCanibal = new PistaAudio(12,"Yo canibal",258,"Patricio Rey y sus redonditos de ricota","Lobo suelto, cordero atado",1993,"Rock Nacional");
 		ElementoAudio paradise = new PistaAudio(13,"Paradise",365,"Coldplay","X&Y",2011,"Rock alternativo");
 		
-		Rockola r = new Rockola();
+		ElementoAudio rockola = new Playlist("Rockola");
 		
-		r.agregarAColeccion(elTiempoNoPara);
-		r.agregarAColeccion(miCaramelo);
-		r.agregarAColeccion(partyRockAnthem);
-		r.agregarAColeccion(sorryForPartyRocking);
-		r.agregarAColeccion(fixYou);
-		r.agregarAColeccion(speedOfSound);
-		r.agregarAColeccion(vivaLaVida);
-		r.agregarAColeccion(withofWhitoutYou);
-		r.agregarAColeccion(vertigo);
-		r.agregarAColeccion(cityofBlindingLights);
-		r.agregarAColeccion(alaLuzdelaLuna);
-		r.agregarAColeccion(yoCanibal);
+		((Playlist) rockola).agregarAPlaylist(elTiempoNoPara);
+		((Playlist) rockola).agregarAPlaylist(miCaramelo);
+		((Playlist) rockola).agregarAPlaylist(partyRockAnthem);
+		((Playlist) rockola).agregarAPlaylist(sorryForPartyRocking);
+		((Playlist) rockola).agregarAPlaylist(fixYou);
+		((Playlist) rockola).agregarAPlaylist(speedOfSound);
+		((Playlist) rockola).agregarAPlaylist(vivaLaVida);
+		((Playlist) rockola).agregarAPlaylist(withofWhitoutYou);
+		((Playlist) rockola).agregarAPlaylist(vertigo);
+		((Playlist) rockola).agregarAPlaylist(cityofBlindingLights);
+		((Playlist) rockola).agregarAPlaylist(alaLuzdelaLuna);
+		((Playlist) rockola).agregarAPlaylist(yoCanibal);
 		
 		ElementoAudio lista1 = new Playlist("Clasicos de rock");
 		ElementoAudio lista2 = new Playlist("Lo mejor");
@@ -39,34 +39,30 @@ public class Simulador {
 		//ElementoAudio lista5 = new Playlist("Variadito");
 		//ElementoAudio lista6 = new Playlist("Variadito2");
 		
-		r.agregarAColeccion(lista1);
-		r.agregarAColeccion(lista2);
-		r.agregarAColeccion(lista3);
-		r.agregarAColeccion(lista4);
-		//r.agregarAColeccion(lista5);
+		((Playlist) rockola).agregarAPlaylist(lista1);
+		((Playlist) rockola).agregarAPlaylist(lista2);
+		((Playlist) rockola).agregarAPlaylist(lista3);
+		((Playlist) rockola).agregarAPlaylist(lista4);
+		
 
-		r.agregarAPlayList(lista1,elTiempoNoPara);
-		r.agregarAPlayList(lista1,withofWhitoutYou);
-		r.agregarAPlayList(lista1,vertigo);
-		r.agregarAPlayList(lista1,cityofBlindingLights);
-		r.agregarAPlayList(lista1,yoCanibal);
+		((Playlist) lista1).agregarAPlaylist(elTiempoNoPara);
+		((Playlist) lista1).agregarAPlaylist(withofWhitoutYou);
+		((Playlist) lista1).agregarAPlaylist(vertigo);
+		((Playlist) lista1).agregarAPlaylist(cityofBlindingLights);
+		((Playlist) lista1).agregarAPlaylist(yoCanibal);
 		
-	    r.agregarAPlayList(lista2, partyRockAnthem);
-	    r.agregarAPlayList(lista2, sorryForPartyRocking);
-	    r.agregarAPlayList(lista2, vivaLaVida);
-	    r.agregarAPlayList(lista2, yoCanibal);
+		((Playlist) lista2).agregarAPlaylist(partyRockAnthem);
+		((Playlist) lista2).agregarAPlaylist(sorryForPartyRocking);
+		((Playlist) lista2).agregarAPlaylist(vivaLaVida);
+		((Playlist) lista2).agregarAPlaylist(yoCanibal);
 	    
-	    r.agregarAPlayList(lista3, fixYou);
-	    r.agregarAPlayList(lista3, speedOfSound);
-	    r.agregarAPlayList(lista3, vivaLaVida);
+		((Playlist) lista3).agregarAPlaylist(fixYou);
+	    ((Playlist) lista3).agregarAPlaylist(speedOfSound);
+	    ((Playlist) lista3).agregarAPlaylist(vivaLaVida);
 	    
-	    r.agregarAPlayList(lista4, alaLuzdelaLuna);
-	    r.agregarAPlayList(lista4, yoCanibal);
+	    ((Playlist) lista4).agregarAPlaylist(alaLuzdelaLuna);
+	    ((Playlist) lista4).agregarAPlaylist(yoCanibal);
 	    
-	  //  r.agregarAPlayList(lista5, lista3);
-	    //r.agregarAPlayList(lista5, lista4);
-		
-		
 		
 		Condicion c1 = new CondicionDuracion(400);
 		Condicion c2 = new CondicionNombre("verti");
@@ -75,19 +71,18 @@ public class Simulador {
 		Condicion c5 = new CondicionGenero("rock");
 		Condicion c6 = new CondicionNot(c3);
 		
-		//Vector<ElementoAudio> v1 = r.buscar(c6);
+		Vector<ElementoAudio> v1 = rockola.buscar(c6);
 		
-		//for (int i = 0; i < v1.size(); i++) {
-			//System.out.println(v1.elementAt(i).toString());
-		//}
-		
-		System.out.println(r.imprimirElemento(yoCanibal));
+		for (int i = 0; i < v1.size(); i++) {
+			System.out.println(v1.elementAt(i).toString());
+		}
 		System.out.println("********************************************************************");
-		System.out.println(r.imprimirCantidadPistas(lista1));
-		System.out.println(r.imprimirCantidadPistasColeccion());
+		System.out.println(rockola.toString());
 		System.out.println("********************************************************************");
-		System.out.println("Duración "+r.getDuracion(lista1)+"seg");
-		r.agregarAColeccion(paradise);
+		System.out.println(rockola.cantPistas());
+				System.out.println("********************************************************************");
+		System.out.println("Duración "+rockola.getDuracion()+"seg");
+		((Playlist) rockola).agregarAPlaylist(paradise);
 		
 		
 	}
