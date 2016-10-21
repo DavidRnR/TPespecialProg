@@ -15,35 +15,35 @@ public class Simulador {
 		ElementoAudio cityofBlindingLights = new PistaAudio(10,"City of Blinding Lights",284,"U2","How to Dismantle an Atomic Bomb",2004,"Rock");
 		ElementoAudio alaLuzdelaLuna = new PistaAudio(11,"A la luz de la luna",438,"El Indio Solari","Pajaritos, bravos muchachitos",2013,"Rock Nacional");
 		ElementoAudio yoCanibal = new PistaAudio(12,"Yo canibal",258,"Patricio Rey y sus redonditos de ricota","Lobo suelto, cordero atado",1993,"Rock Nacional");
-
+		ElementoAudio paradise = new PistaAudio(13,"Paradise",365,"Coldplay","X&Y",2011,"Rock alternativo");
 		
 		Rockola r = new Rockola();
 		
-		r.addAColeccion(elTiempoNoPara);
-		r.addAColeccion(miCaramelo);
-		r.addAColeccion(partyRockAnthem);
-		r.addAColeccion(sorryForPartyRocking);
-		r.addAColeccion(fixYou);
-		r.addAColeccion(speedOfSound);
-		r.addAColeccion(vivaLaVida);
-		r.addAColeccion(withofWhitoutYou);
-		r.addAColeccion(vertigo);
-		r.addAColeccion(cityofBlindingLights);
-		r.addAColeccion(alaLuzdelaLuna);
-		r.addAColeccion(yoCanibal);
+		r.agregarAColeccion(elTiempoNoPara);
+		r.agregarAColeccion(miCaramelo);
+		r.agregarAColeccion(partyRockAnthem);
+		r.agregarAColeccion(sorryForPartyRocking);
+		r.agregarAColeccion(fixYou);
+		r.agregarAColeccion(speedOfSound);
+		r.agregarAColeccion(vivaLaVida);
+		r.agregarAColeccion(withofWhitoutYou);
+		r.agregarAColeccion(vertigo);
+		r.agregarAColeccion(cityofBlindingLights);
+		r.agregarAColeccion(alaLuzdelaLuna);
+		r.agregarAColeccion(yoCanibal);
 		
 		ElementoAudio lista1 = new Playlist("Clasicos de rock");
 		ElementoAudio lista2 = new Playlist("Lo mejor");
 		ElementoAudio lista3 = new Playlist("Coldplay");
 		ElementoAudio lista4 = new Playlist("El Indio");
-		ElementoAudio lista5 = new Playlist("Variadito");
-		ElementoAudio lista6 = new Playlist("Variadito2");
+		//ElementoAudio lista5 = new Playlist("Variadito");
+		//ElementoAudio lista6 = new Playlist("Variadito2");
 		
-		r.crearPlayList(lista1);
-		r.crearPlayList(lista2);
-		r.crearPlayList(lista3);
-		r.crearPlayList(lista4);
-		r.crearPlayList(lista5);
+		r.agregarAColeccion(lista1);
+		r.agregarAColeccion(lista2);
+		r.agregarAColeccion(lista3);
+		r.agregarAColeccion(lista4);
+		//r.agregarAColeccion(lista5);
 
 		r.agregarAPlayList(lista1,elTiempoNoPara);
 		r.agregarAPlayList(lista1,withofWhitoutYou);
@@ -63,12 +63,10 @@ public class Simulador {
 	    r.agregarAPlayList(lista4, alaLuzdelaLuna);
 	    r.agregarAPlayList(lista4, yoCanibal);
 	    
-	    r.agregarAPlayList(lista5, lista3);
-	    r.agregarAPlayList(lista5, lista4);
+	  //  r.agregarAPlayList(lista5, lista3);
+	    //r.agregarAPlayList(lista5, lista4);
 		
 		
-
-		System.out.println("********************************************************************");
 		
 		Condicion c1 = new CondicionDuracion(400);
 		Condicion c2 = new CondicionNombre("verti");
@@ -77,10 +75,20 @@ public class Simulador {
 		Condicion c5 = new CondicionGenero("rock");
 		Condicion c6 = new CondicionNot(c3);
 		
-		Vector<ElementoAudio> v1 = r.buscar(c6);
+		//Vector<ElementoAudio> v1 = r.buscar(c6);
 		
-		for (int i = 0; i < v1.size(); i++) {
-			System.out.println(v1.elementAt(i).toString());
-		}
+		//for (int i = 0; i < v1.size(); i++) {
+			//System.out.println(v1.elementAt(i).toString());
+		//}
+		
+		System.out.println(r.imprimirElemento(yoCanibal));
+		System.out.println("********************************************************************");
+		System.out.println(r.imprimirCantidadPistas(lista1));
+		System.out.println(r.imprimirCantidadPistasColeccion());
+		System.out.println("********************************************************************");
+		System.out.println("Duración "+r.getDuracion(lista1)+"seg");
+		r.agregarAColeccion(paradise);
+		
+		
 	}
 }

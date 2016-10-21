@@ -1,20 +1,14 @@
 import java.util.*;
 
 public class Rockola {
-	private Playlist coleccion;
-	private Vector<ElementoAudio> playlists;
+	private ElementoAudio coleccion;  
 	
 	public Rockola () {
-		coleccion = new Playlist("Coleccion");
-		playlists = new Vector<ElementoAudio>();
+		coleccion = new Playlist("Colección");
 	}
 	
-	public void addAColeccion (ElementoAudio track) {
-		coleccion.agregarAPlaylist(track);
-	}
-	
-	public void crearPlayList (ElementoAudio lista) {
-		playlists.add(lista);
+	public void agregarAColeccion (ElementoAudio elm) {
+		((Playlist)coleccion).agregarAPlaylist(elm);
 	}
 	
 	public void agregarAPlayList (ElementoAudio lista,ElementoAudio track) {
@@ -29,18 +23,23 @@ public class Rockola {
 		return coleccion.buscar(cond);
 	}
 	//**************************************Imprimir**********************************************
-	public void imprimirColeccion () {
-		System.out.println(coleccion.toString());
+	public String imprimirColeccion () {
+		return coleccion.toString();
 	}
 	
-	public void imprimirPlaylist (ElementoAudio e) {
-		System.out.println(e.toString());
+	public String imprimirCantidadPistasColeccion () {
+		return imprimirCantidadPistas(coleccion);
 	}
 	
-	public void imprimirCantidadPistas (ElementoAudio lista) {
-		if (playlists.contains(lista))
-		System.out.println("La Playlist "+lista.getTitulo()+" tiene "+lista.cantPistas()+" canciones");
-		else 
-		System.out.println("La Playlist no se encuentra en la biblioteca");
+	public String imprimirElemento(ElementoAudio elm) {
+		return elm.toString();
+	}
+	
+	public String imprimirCantidadPistas (ElementoAudio lista) {
+		return ("La Playlist "+lista.getTitulo()+" tiene "+lista.cantPistas()+" pistas");
+	}
+	
+	public int getDuracion (ElementoAudio elm) {
+		return elm.getDuracion();
 	}
 }
