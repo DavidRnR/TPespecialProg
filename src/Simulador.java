@@ -66,22 +66,26 @@ public class Simulador {
 		
 		Condicion c1 = new CondicionDuracion(400);
 		Condicion c2 = new CondicionNombre("verti");
-		Condicion c3 = new CondicionArtista("lmfo");
-		Condicion c4 = new CondicionAnd(c1,c3);
-		Condicion c5 = new CondicionGenero("rock");
+		Condicion c3 = new CondicionArtista("colplay");
+		Condicion c4 = new CondicionGenero("rock");
+		Condicion cFechaMayor = new CondicionMayorYear(2006);
 		Condicion c6 = new CondicionNot(c3);
+		Condicion c5 = new CondicionAnd(c4,cFechaMayor);
+		Condicion c7 = new CondicionAnd(c4,c3);
+		Condicion c10 = new CondicionOr(c5,c7);
 		
-		Vector<ElementoAudio> v1 = rockola.buscar(c6);
+		
+		Vector<ElementoAudio> v1 = rockola.buscar(c10);
 		
 		for (int i = 0; i < v1.size(); i++) {
 			System.out.println(v1.elementAt(i).toString());
 		}
 		System.out.println("********************************************************************");
-		System.out.println(rockola.toString());
+		//System.out.println(rockola.toString());
 		System.out.println("********************************************************************");
-		System.out.println(rockola.cantPistas());
+	//	System.out.println(rockola.cantPistas());
 				System.out.println("********************************************************************");
-		System.out.println("Duración "+rockola.getDuracion()+"seg");
+		//System.out.println("Duración "+rockola.getDuracion()+"seg");
 		((Playlist) rockola).agregarAPlaylist(paradise);
 		
 		

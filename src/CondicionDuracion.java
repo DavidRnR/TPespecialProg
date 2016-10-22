@@ -8,7 +8,7 @@ public class CondicionDuracion extends Condicion{
 
 	@Override
 	public boolean cumple(ElementoAudio elemento) {
-		return elemento.getDuracion() > valor;
+		return elemento.getDuracion() == valor;
 	}
 
 }
