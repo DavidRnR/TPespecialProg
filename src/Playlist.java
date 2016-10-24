@@ -23,7 +23,7 @@ public class Playlist extends ElementoAudio {
 		pistas.add(pos, p1);
 	}
 
-	public int getPos (ElementoAudio p1) {
+	private int getPos (ElementoAudio p1) {
 		int i=0;
 		while (i<pistas.size()) {
 			if (pistas.elementAt(i).equals(p1)) { //usar equals 
