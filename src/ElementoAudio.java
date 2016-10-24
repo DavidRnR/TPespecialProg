@@ -2,7 +2,10 @@ import java.util.Vector;
 
 public abstract class ElementoAudio {
 	String titulo;
-	int duracion;
+
+	public void setTitulo (String _titulo) {
+		titulo = _titulo;
+	}
 
 	public String getTitulo () {
 		return titulo;

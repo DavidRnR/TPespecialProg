@@ -2,7 +2,7 @@ import java.util.Vector;
 
 public class PistaAudio extends ElementoAudio {
 	private String artista , album, genero, comentario;
-	private int ID,year; 
+	private int ID,year,duracion; 
 
 	public PistaAudio (int _id,String _titulo,int _duracion,String _artista, String _album, int _year, String _gen) {
 		ID = _id;
@@ -25,10 +25,6 @@ public class PistaAudio extends ElementoAudio {
 
 	public void setYear (int _year) {
 		year = _year;
-	}
-
-	public void setTitulo (String _titulo) {
-		titulo = _titulo;
 	}
 
 	public void setArtista (String _artista) {
@@ -88,6 +84,6 @@ public class PistaAudio extends ElementoAudio {
 	}
 
 	public String toString () {
-		return ("\nID: "+ID+"\nTitulo: "+titulo+"\nDuración: "+duracion+"seg"+"\nArtista: "+artista+"\nAlbum: "+album+"\nAño: "+year+"\nGénero: "+genero+"\nComentario: "+comentario+"\n");
+		return ("ID: "+ID+" Titulo: "+titulo+" Duración: "+duracion+"seg"+" Artista: "+artista+" Album: "+album+" Año: "+year+" Género: "+genero+" Comentario: "+comentario+"\n");
 	}
 }
