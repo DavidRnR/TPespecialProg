@@ -69,11 +69,11 @@ public class PistaAudio extends ElementoAudio {
 	}
 
 	//*******************************************
-
+	@Override
 	public int cantPistas () {
 		return 1;
 	}
-
+	@Override
 	public Vector<ElementoAudio> buscar (Condicion cond) {
 		Vector<ElementoAudio> resultado = new Vector<ElementoAudio>();
 
@@ -84,6 +84,6 @@ public class PistaAudio extends ElementoAudio {
 	}
 
 	public String toString () {
-		return ("ID: "+ID+" Titulo: "+titulo+" Duración: "+duracion+"seg"+" Artista: "+artista+" Album: "+album+" Año: "+year+" Género: "+genero+" Comentario: "+comentario+"\n");
+		return ("ID: "+ID+" Titulo: "+titulo+" Duración: "+duracion+"seg"+" Artista: "+artista+" Album: "+album+"("+genero+", "+year+")"+"\n");
 	}
 }

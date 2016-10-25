@@ -24,16 +24,15 @@ public class Playlist extends ElementoAudio {
 	}
 
 	private int getPos (ElementoAudio p1) {
-		int i=0;
-		while (i<pistas.size()) {
-			if (pistas.elementAt(i).equals(p1)) { //usar equals 
-				return i; 
-			}
-			else i++;
+		for (int i = 0; i<pistas.size(); i++) {
+			if (pistas.elementAt(i).equals(p1))
+				return i;
 		}
-		return i;
+	
+		return -1;
 	}
-
+	
+	@Override
 	public int getDuracion() {
 		int segundos=0;
 
@@ -42,7 +41,8 @@ public class Playlist extends ElementoAudio {
 		}
 		return segundos;
 	}
-
+	
+	@Override
 	public int cantPistas () {
 		int cant=0;
 		for(int i=0;i<pistas.size();i++) {
@@ -51,6 +51,7 @@ public class Playlist extends ElementoAudio {
 		return cant;
 	}
 	
+	@Override
 	public Vector<ElementoAudio> buscar (Condicion cond) {
 		Vector<ElementoAudio> resultado = new Vector<ElementoAudio>();
 		

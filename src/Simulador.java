@@ -91,7 +91,7 @@ public class Simulador {
 		Condicion c9 = new CondicionAnd(c2,c7); 
 		Condicion c10 = new CondicionOr(c8,c9); //Contega la palabra "rock" Y sea mayor al año 2006 O Contega la palabra "rock" Y Y cuyo interprete sea "Colplay"
 
-		Vector<ElementoAudio> v1 = coleccion.buscar(c10); //c1,c2,c5 y c10 son las condiciones a probar por la guía
+		Vector<ElementoAudio> v1 = coleccion.buscar(c1); //c1,c2,c5 y c10 son las condiciones a probar por la guía
 
 		for (int i = 0; i < v1.size(); i++) {
 			System.out.print(v1.elementAt(i).toString());
@@ -101,12 +101,12 @@ public class Simulador {
 		
 		ElementoAudio paradise = new PistaAudio(13,"Paradise",365,"Coldplay","X&Y",2011,"Rock alternativo");
 		((Playlist) coleccion).agregarAPlaylist(paradise);
-		
-		v1 = coleccion.buscar(c10); //Agregamos paradise y probamos la busqueda nuevamente
+		//Agregamos paradise y probamos la busqueda nuevamente
+		v1 = coleccion.buscar(c1); 
 
 		for (int i = 0; i < v1.size(); i++) {
 			System.out.print(v1.elementAt(i).toString());
 		}
-
+		
 	}
 }
