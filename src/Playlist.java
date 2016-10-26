@@ -18,20 +18,15 @@ public class Playlist extends ElementoAudio {
 	}
 
 	public void moverPista (ElementoAudio p1, int pos) {
-		int posp1 = getPos(p1);
+		int posp1 = pistas.indexOf(p1);
+		
+		if (posp1!= -1) {
 		pistas.remove(posp1);
 		pistas.add(pos, p1);
+		}
 	}
 
-	private int getPos (ElementoAudio p1) {
-		for (int i = 0; i<pistas.size(); i++) {
-			if (pistas.elementAt(i).equals(p1))
-				return i;
-		}
-	
-		return -1;
-	}
-	
+		
 	@Override
 	public int getDuracion() {
 		int segundos=0;
@@ -70,5 +65,13 @@ public class Playlist extends ElementoAudio {
 		}
 		return info;
 	}
-
+	
+	@Override
+	public boolean equals(Object p1) {
+		if (p1 instanceof Playlist) {
+			Playlist p = (Playlist)p1;
+			return titulo.equals(p.getTitulo());
+		}
+		return false;
+	}
 }

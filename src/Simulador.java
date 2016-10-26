@@ -107,6 +107,5 @@ public class Simulador {
 		for (int i = 0; i < v1.size(); i++) {
 			System.out.print(v1.elementAt(i).toString());
 		}
-		
-	}
+	}	
 }
