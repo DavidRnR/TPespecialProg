@@ -83,12 +83,15 @@ public class PistaAudio extends ElementoAudio {
 		return resultado;
 	}
 
+	@Override
 	public String toString () {
 		return ("ID: "+ID+" Titulo: "+titulo+" Duración: "+duracion+"seg"+" Artista: "+artista+" Album: "+album+"("+genero+", "+year+")"+"\n");
 	}
 	
 	@Override
 	public boolean equals(Object p1) {
+		if(this==p1)
+			return true;
 		if (p1 instanceof PistaAudio) { 
 			PistaAudio p = (PistaAudio)p1;
 			return ID==p.getID()&&year==p.getYear()&&duracion==p.getDuracion()&&artista.equals(p.getArtista())&&album.equals(p.getAlbum());

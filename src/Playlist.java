@@ -57,7 +57,8 @@ public class Playlist extends ElementoAudio {
 		}
 		return resultado;
 	}
-
+	
+	@Override
 	public String toString () {
 		String info="";
 		for(int i=0;i<pistas.size();i++) {
@@ -68,6 +69,8 @@ public class Playlist extends ElementoAudio {
 	
 	@Override
 	public boolean equals(Object p1) {
+		if(this==p1)
+			return true;
 		if (p1 instanceof Playlist) {
 			Playlist p = (Playlist)p1;
 			return titulo.equals(p.getTitulo());
