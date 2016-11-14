@@ -70,6 +70,11 @@ public class PistaAudio extends ElementoAudio {
 
 	//*******************************************
 	@Override
+	public void removePista(ElementoAudio track) {
+		
+	}
+	
+	@Override
 	public int cantPistas () {
 		return 1;
 	}

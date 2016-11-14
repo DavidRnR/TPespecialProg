@@ -14,6 +14,9 @@ public class Playlist extends ElementoAudio {
 	}
 
 	public void removePista(ElementoAudio track) {
+		for (ElementoAudio elemento : pistas) {
+			elemento.removePista(track);
+		}
 		pistas.remove(track);
 	}
 

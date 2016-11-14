@@ -14,4 +14,5 @@ public abstract class ElementoAudio {
 	public abstract int cantPistas ();
 	public abstract int getDuracion();
 	public abstract Vector<ElementoAudio> buscar (Condicion cond);
+	public abstract void removePista (ElementoAudio e);
 }
